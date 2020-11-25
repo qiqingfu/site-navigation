@@ -17,11 +17,11 @@
 每个导航模块的渲染顺序根据在 index.html 文件的 head 标签内部引入的 js 配置模块对应。调整导航模块的先后顺序只需要调整引入顺序即可。
 
 ```html
-  <!--按需引入文件 start, 按照引入配置文件的顺序渲染-->
+<!--按需引入文件 start, 按照引入配置文件的顺序渲染-->
 <script defer src="configs/author.js"></script>
 <script defer src="configs/navigations.js"></script>
 <script defer src="configs/ope.js"></script>
-  <!--按需引入文件 end-->
+<!--按需引入文件 end-->
 ```
 
 
@@ -30,27 +30,20 @@
 
 以 `configs/author.js` 文件的配置项进行说明: 
 
-- `name` ：String -  模块的名字
+```text
+name ：String -  模块的名字
+  - children:  Array<Object> - 模块的子导航
+    - title: String - 子导航标题
+    - notice: String - 子导航的公告说明
+    - href?: String - 子导航点击跳转的链接地址，可选项
+    - logo: Sting - 子导航 Logo 图
+    - buttons?: Array<Object> - 子导航的底部按钮链接，可选项, 可配合多个
+      - title: String - 按钮链接标题`
+      - href: String - 子链接对应的跳转地址
+```
+     
 
-  - `children`:  Array<Object> - 模块的子导航
-
-    - `title`: String - 子导航标题
-
-    - `notice`: String - 子导航的公告说明
-
-    - `href?`: String - 子导航点击跳转的链接地址，可选项
-
-    - `logo`: Sting - 子导航 Logo 图
-
-    - `buttons?`: Array<Object> - 子导航的底部按钮链接，可选项, 可配合多个
-
-      - `title`: String - 按钮链接标题`
-
-      - `href`: String - 子链接对应的跳转地址
-
-        
-
-示例配置 `author.js`：
+## 参考示例
 
 ```js
 const author = {
@@ -72,7 +65,6 @@ $mount({
 ```
 
 每个模块配置项对象, 都要调用一次 `$mount()` 函数, 用于挂载配置项。
-
 
 
 ## 感谢
