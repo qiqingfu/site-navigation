@@ -30,17 +30,15 @@
 
 以 `configs/author.js` 文件的配置项进行说明: 
 
-```text
-name ：String -  模块的名字
-  - children:  Array<Object> - 模块的子导航
-    - title: String - 子导航标题
-    - notice: String - 子导航的公告说明
-    - href?: String - 子导航点击跳转的链接地址，可选项
-    - logo: Sting - 子导航 Logo 图
-    - buttons?: Array<Object> - 子导航的底部按钮链接，可选项, 可配合多个
-      - title: String - 按钮链接标题`
-      - href: String - 子链接对应的跳转地址
-```
+name ：`string` -  模块的名字
+  - children: `Array<object>` - 模块的子导航
+    - title: `string` - 子导航标题
+    - notice: `string` - 子导航的公告说明
+    - href?: `string` - 子导航点击跳转的链接地址，可选项
+    - logo: `string` - 子导航 Logo 图
+    - buttons?: `Array<object>` - 子导航的底部按钮链接，可选项, 可配合多个
+      - title: `string` - 按钮链接标题
+      - href: `string` - 子链接对应的跳转地址
      
 
 ## 参考示例
